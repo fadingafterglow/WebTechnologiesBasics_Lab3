@@ -2,63 +2,145 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>Pizza</title>
+        <title>Pizza KMA</title>
         <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
-        <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/less"></script>
     </head>
     <body>
-        <div id="cart"></div>
-        <div class="container">
-            <div class="row" id="pizza_list">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail pizza-card">
-                        <img src="assets/images/pizza_1.jpg">
-                    
-                        <div class="caption"><h3>Thumbnail label</h3>
-                        
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        
-                            <p>
-                                <a href="#" class="btn btn-primary">Button 2</a>
-                                <a href="#" class="btn btn-default">Button 1</a>
-                            </p>
+        <main>
+            <nav>
+                <div>
+                    <p>PIZZA</p>
+                    <p>KMA</p>
+                    <img src="assets/images/discount.svg"/>
+                </div>
+                <div>
+                    <div>
+                        <span>(044) 222 5 222</span>
+                        <span>24 години / 7 днів на тиждень</span>
+                        <span>Безкоштовна доставка піци</span>
+                        <hr>
+                        <span>Піца</span>
+                    </div>
+                    <button>Ввійти</button>
+                </div>
+            </nav>
+            <section>
+                <header>
+                    <div>
+                        <h1>Усі піци</h1>
+                        <span>8</span>
+                    </div>
+                    <div>
+                        <label for="category-1">Усі</label>
+                        <input type="radio" name="category" id="category-1">
+                        <label for="category-2">М'ясні</label>
+                        <input type="radio" name="category" id="category-2">
+                        <label for="category-3">З ананасами</label>
+                        <input type="radio" name="category" id="category-3">
+                        <label for="category-4">З грибами</label>
+                        <input type="radio" name="category" id="category-4">
+                        <label for="category-5">З морепродуктами</label>
+                        <input type="radio" name="category" id="category-5">
+                        <label for="category-6">Вега</label>
+                        <input type="radio" name="category" id="category-6">
+                    </div>
+                </header>
+                <article>
+                    <span>Нова</span>
+                    <img src="assets/images/pizza_7.jpg" />
+                    <h2>Імпреза</h2>
+                    <p>М'ясна піца</p>
+                    <p>Балик, салямі, курка, сир моцарелла, сир рокфорд, ананаси, томатна паста, петрушка</p>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="assets/images/size-icon.svg" />
+                                <span>30</span>
+                            </div>
+                            <div>
+                                <img src="assets/images/weight.svg" />
+                                <span>370</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>99</p>
+                            <p>грн.</p>
+                        </div>
+                        <button>Купити</button>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="assets/images/size-icon.svg" />
+                                <span>40</span>
+                            </div>
+                            <div>
+                                <img src="assets/images/weight.svg" />
+                                <span>660</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>169</p>
+                            <p>грн.</p>
+                        </div>
+                        <button>Купити</button>
+                    </div>
+                </article>
+            </section>
+            <footer>
+                <p>Pizza.24 - практичний проект в межах курсу JavaScript в Києво-Могилянській академії</p>
+                <p>Доставка піци не здійснюється</p>
+            </footer>
+        </main>
+        <aside>
+            <header>
+                <div>
+                    <span>Замовлення</span>
+                    <span>3</span>
+                </div>
+                <button>Очистити замовлення</button>
+            </header>
+            <section>
+                <article>
+                    <div>
+                        <h2>BBQ (Мала)</h2>
+                        <div>
+                            <div>
+                                <img src="assets/images/size-icon.svg" />
+                                <span>30</span>
+                            </div>
+                            <div>
+                                <img src="assets/images/weight.svg" />
+                                <span>460</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span>556</span>
+                            <div>
+                                <button>-</button>
+                                <span>4</span>
+                                <button>+</button>
+                            </div>
+                            <button>x</button>
                         </div>
                     </div>
+                    <img src="assets/images/pizza_2.jpg" />
+                </article>
+            </section>
+            <footer>
+                <div>
+                    <span>Сума замовлення</span>
+                    <span><span>924</span> грн</span>
+                    <button>Замовити</button>
                 </div>
-            
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail pizza-card">
-                        <img src="assets/images/pizza_2.jpg">
-                    
-                        <div class="caption"><h3>Thumbnail label</h3>
-                        
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        
-                            <p>
-                                <a href="#" class="btn btn-primary">Button 3</a>
-                                <a href="#" class="btn btn-default">Button 4</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail pizza-card">
-                        <img src="assets/images/pizza_3.jpg">
-                    
-                        <div class="caption"><h3>Thumbnail label</h3>
-                        
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        
-                            <p>
-                                <a href="#" class="btn btn-primary">Button 5</a>
-                                <a href="#" class="btn btn-default">Button 6</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </footer>
+        </aside>
+        <footer>
+            <p>ЦЬОГО ТИЖНЯ НА ВСЕ</p>
+            <hr>
+            <p>-20%</p>
+        </footer>
         <!-- <script type="text/javascript"  src="assets/js/main.js"></script> -->
     </body>
 </html>
