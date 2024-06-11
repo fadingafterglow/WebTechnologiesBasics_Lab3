@@ -1,3 +1,38 @@
-@mainColor: blue;
-
+@import "global-var.less";
 @import "pizza/pizza-card.less";
+@import "overlay.less";
+
+body {
+    margin: 0;
+    display: flex;
+    align-self: start;
+    justify-content: flex-start;
+    font-family: @font;
+    font-size: @font-size;
+
+    > footer {
+        position: fixed;
+        left: 5%;
+        bottom: 0;
+    }
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+}
+
+.action-button {
+    background: linear-gradient(150deg, #F1AC3F, #EC9500);
+    color: @button-text-color;
+    border: 1px solid #E68F00;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background: linear-gradient(150deg, #f0a731, #ce8301);
+}
