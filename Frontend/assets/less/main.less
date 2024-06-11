@@ -12,8 +12,38 @@ body {
 
     > footer {
         position: fixed;
-        left: 5%;
+        left: 7px;
         bottom: 0;
+
+        div {
+            box-sizing: border-box;
+            width: 100px;
+            padding: 0 10px;
+            background-color: @badge-background;
+            border: @badge-border;
+            border-top: none;
+            text-align: center;
+
+            p {
+                margin: 0;
+                font-weight: bold;
+                color: @button-text-color;
+
+                &:first-of-type {
+                    padding: 10px 0 5px 0;
+                    border-bottom: 2px dotted #D26300;
+                }
+
+                &:last-of-type {
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: -11px + 1px;
+        }
     }
 }
 
