@@ -103,15 +103,15 @@
             <header>
                 <div>
                     <span>Замовлення</span>
-                    <span>3</span>
+                    <span class="quantity">3</span>
                 </div>
-                <button>Очистити замовлення</button>
+                <button class="clear-btn">Очистити замовлення</button>
             </header>
-            <section>
-                <article>
+            <section class="order-container">
+                <article class="order">
                     <div>
-                        <h2>BBQ (Мала)</h2>
-                        <div>
+                        <p class="name">BBQ (Мала)</p>
+                        <div class="measures">
                             <div>
                                 <img src="assets/images/size-icon.svg" />
                                 <span>30</span>
@@ -121,14 +121,14 @@
                                 <span>460</span>
                             </div>
                         </div>
-                        <div>
-                            <span>556</span>
+                        <div class="control-btns">
+                            <span><span>556</span> грн</span>
                             <div>
-                                <button>-</button>
-                                <span>4</span>
-                                <button>+</button>
+                                <button class="control-btn decrease-btn">–</button>
+                                <span class="amount">4</span>
+                                <button class="control-btn increase-btn">+</button>
                             </div>
-                            <button>x</button>
+                            <button class="control-btn delete-btn">×</button>
                         </div>
                     </div>
                     <img src="assets/images/pizza_2.jpg" />
@@ -138,7 +138,9 @@
                 <div>
                     <span>Сума замовлення</span>
                     <span><span>924</span> грн</span>
-                    <button>Замовити</button>
+                </div>
+                <div>
+                    <button class="action-button">Замовити</button>
                 </div>
             </footer>
         </aside>

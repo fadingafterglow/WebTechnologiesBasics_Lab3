@@ -1,0 +1,192 @@
+@border-color: #E1E1E1;
+@image-size: 100px * @font-size;
+@control-button-size: 32px * @font-size;
+
+aside {
+    height: 100vh;
+    box-shadow: -3px 3px 3.5px rgba(125, 125, 125, 0.25);
+
+    & > header {
+        box-sizing: border-box;
+        height: @overlay-height;
+        min-width: 375px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+        span:first-of-type {
+            font-size: 1.7*@font-size;
+            font-weight: bold;
+        }
+
+        .quantity {
+            font-size: 1.25*@font-size;
+        }
+
+        .clear-btn {
+            font-size: 0.8*@font-size;
+            border: none;
+            background: none;
+            color: #8B8B8B;
+            cursor: pointer;
+
+            &:hover {
+                color: #6d6d6d;
+            }
+        }
+    }
+
+    .order-container {
+        box-sizing: border-box;
+        height: calc(100vh - (@overlay-height + 110px));
+        background-color: #FCFCFE;
+        border-left: 1px solid @border-color;
+        overflow-y: auto;
+
+        // hide scrollbar
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        //hide in Firefox and Edge
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+    }
+
+    .order {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        box-sizing: border-box;
+        min-height: @image-size*1.2;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid @border-color;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            box-sizing: border-box;
+            width: calc(90% - @image-size/2);
+            padding: 15px;
+            
+            & > * {
+                width: 100%;
+            }
+
+            .name {
+                color: #EE8900;
+                font-size: 1.5*@font-size;
+                margin: 0;
+            }
+
+            .measures {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin: 5px 0;
+
+                div:last-of-type {
+                    margin: 5px 20px;
+                }
+            }
+
+            .control-btns {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: bold;
+
+                .control-btn {
+                    font-size: @font-size;
+                    font-weight: bold;
+                    border: 1px solid;
+                    border-radius: 100%;
+                    width: @control-button-size;
+                    height: @control-button-size;
+                    cursor: pointer;
+                }
+
+                .amount {
+                    margin: 0 5px;
+                }
+
+                .decrease-btn {
+                    color: @button-text-color;
+                    border-color: #C13129;
+                    background: linear-gradient(to bottom, #DB524B, #BD2B22);
+                    &:hover {
+                        background: linear-gradient(to bottom, #db3e36, #bb180f);
+                    }
+                }
+
+                
+                .increase-btn {
+                    color: @button-text-color;
+                    border-color: #429841;
+                    background: linear-gradient(to bottom, #56B855, #3E983C);
+                    &:hover {
+                        background: linear-gradient(to bottom, #41b43f, #288326);
+                    }    
+                }
+
+                
+                .delete-btn {
+                    color: #EE8900;
+                    border-color: #D5D5D5;
+                    background: linear-gradient(to bottom, #FDFDFD, #E1E1E1);
+                    &:hover {
+                        background: linear-gradient(to bottom, #f7f7f7, #d2d2d2);
+                    }    
+                }
+            }
+        }
+
+        & > img {
+            position: absolute;
+            width: @image-size;
+            height: @image-size;
+            right: calc(-@image-size/2);
+        }
+    }
+
+    & > footer {
+        box-sizing: border-box;
+        height: 110px;
+        padding: 10px 10px 0 10px;
+        border: 1px solid @border-color;
+        border-right: none;
+
+        & > div {
+            display: flex;
+
+            &:first-of-type {
+                height: 20%;
+                justify-content: space-between;
+                align-items: start;
+    
+                span {
+                    font-weight: bold;
+    
+                    &:last-of-type {
+                        font-size: 1.3*@font-size;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                height: 80%;
+                justify-content: center;
+                align-items: center;
+
+                .action-button {
+                    width: 95%;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}

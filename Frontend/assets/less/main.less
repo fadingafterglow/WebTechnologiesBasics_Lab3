@@ -1,6 +1,7 @@
 @import "global-var.less";
 @import "pizza/pizza-card.less";
 @import "overlay.less";
+@import "sidepanel.less";
 
 body {
     margin: 0;
@@ -58,11 +59,20 @@ aside {
 .action-button {
     background: linear-gradient(150deg, #F1AC3F, #EC9500);
     color: @button-text-color;
+    font-size: 1.1*@font-size;
     border: 1px solid #E68F00;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(150deg, #f0a731, #d98a01);
+    }
 }
 
-.action-button:hover {
-    background: linear-gradient(150deg, #f0a731, #ce8301);
+.quantity {
+    color: @button-text-color;
+    background-color: #EE8900;
+    border-radius: 20px;
+    padding: 1px 7px;
+    text-align: center;
 }
