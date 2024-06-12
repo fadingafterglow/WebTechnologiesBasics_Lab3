@@ -1,5 +1,5 @@
-@order-image-size: 100px * @font-size;
-@control-button-size: 32px * @font-size;
+@order-image-size: 100px;
+@control-button-size: 32px;
     
 .order {
     display: flex;
@@ -20,13 +20,19 @@
         width: calc(90% - @order-image-size/2);
         padding: 15px;
         
+        @media (max-width: 500px) {
+            width: calc(100% - @order-image-size/2);
+            padding: 10px;
+        }
+
+
         & > * {
             width: 100%;
         }
 
          .name {
             color: @color;
-            font-size: 1.5*@font-size;
+            font-size: calc(1.45*@font-size);
             margin: 0;
         }
 
@@ -55,10 +61,24 @@
                 width: @control-button-size;
                 height: @control-button-size;
                 cursor: pointer;
+
+                @media (max-width: 650px) {
+                    width: @control-button-size * 0.7;
+                    height: @control-button-size * 0.7;
+                }
+
+                @media (max-width: 375px) {
+                    width: @control-button-size * 0.6;
+                    height: @control-button-size * 0.6;
+                }
             }
 
              .amount {
                 margin: 0 5px;
+
+                @media (max-width: 750px) {
+                    margin: 0;
+                }
             }
 
              .decrease-btn {

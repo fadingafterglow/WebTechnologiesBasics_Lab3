@@ -1,8 +1,24 @@
 @font: Arial, Helvetica, sans-serif;
-@font-size: 1rem;
+@font-size: var(--font-size);
 @overlay-height: 90px;
 @color: #EE8900;
 @element-text-color: white;
 @border-color: #E1E1E1;
 @badge-background: #EA862E;
 @badge-border: 1px solid #D16200;
+
+:root {
+    --font-size: 1rem;
+
+    @media (max-width: 750px) {
+        --font-size: 0.9rem;
+    }
+
+    @media (max-width: 650px) {
+        --font-size: 0.8rem;
+    }
+
+    @media (max-width: 375px) {
+        --font-size: 0.65rem;
+    }
+}

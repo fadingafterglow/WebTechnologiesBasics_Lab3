@@ -27,6 +27,13 @@ body {
             border-top: none;
             text-align: center;
 
+            
+            @media (max-width: 500px){
+                width: 50px;
+                padding: 0;
+                font-size: calc(0.9 * @font-size);
+            }
+
             p {
                 margin: 0;
                 font-weight: bold;
@@ -46,12 +53,17 @@ body {
         img {
             position: absolute;
             top: -11px + 1px;
+
+            @media (max-width: 500px){
+                top: -5.5px + 1px;
+                width: 50px;
+            }
         }
     }
 }
 
 main {
-    flex: 3;
+    flex: 5;
 }
 
 aside {
@@ -61,7 +73,7 @@ aside {
 .action-button {
     background: linear-gradient(150deg, #F1AC3F, #EC9500);
     color: @element-text-color;
-    font-size: 1.1*@font-size;
+    font-size: calc(1.1*@font-size);
     border: 1px solid #E68F00;
     border-radius: 5px;
     cursor: pointer;
