@@ -1,0 +1,101 @@
+@card-image-size: 325px;
+
+.pizza-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    background-color: #FDFDFD;
+    border: 1px solid @border-color;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3.5px rgba(125, 125, 125, 0.25);
+
+    .tag {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        padding: 1px 7px;
+        border-radius: 5px;
+        color: @element-text-color;
+        font-size: 1.3*@font-size;
+        font-weight: bold;
+
+        &.none {
+            display: none;
+        }
+
+        &.new {
+            background-color: #DB524B;
+        }
+
+        &.popular {
+            background-color: #59B958;
+        }
+    }
+    
+    & > img {
+        width: @card-image-size;
+        height: @card-image-size;
+    }
+
+    .description {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+
+        & > * {
+            margin: 0;;
+        }
+
+        .name {
+            color: #EE6C05;
+            font-weight: bold;
+            font-size: 2*@font-size;
+        }
+
+        .category {
+            color: #B3B1B0;
+            margin: 5px 0;
+        }
+    }
+
+    .properties {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px 10px 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .property {
+            & > * {
+                width: 100%;
+                text-align: center;
+            }
+
+            .measures > div:last-of-type {
+                margin-top: 5px;
+            }
+
+            .price p {
+                font-weight: bold;
+
+                &:first-of-type {
+                    margin: 15px 0 0 0;
+                    font-size: 2*@font-size;
+                }
+
+                &:last-of-type {
+                    margin: 0 0 10px 0;
+                    font-size: 1.1*@font-size;
+                }
+            }
+            
+            .action-button {
+                font-size: @font-size;
+                padding: 5px 15px;
+            }
+        }
+    }
+}

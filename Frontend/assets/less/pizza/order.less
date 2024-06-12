@@ -1,0 +1,101 @@
+@order-image-size: 100px * @font-size;
+@control-button-size: 32px * @font-size;
+    
+.order {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: @order-image-size*1.2;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid @border-color;
+
+     & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        box-sizing: border-box;
+        width: calc(90% - @order-image-size/2);
+        padding: 15px;
+        
+        & > * {
+            width: 100%;
+        }
+
+         .name {
+            color: @color;
+            font-size: 1.5*@font-size;
+            margin: 0;
+        }
+
+         .measures {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin: 5px 0;
+
+             div:last-of-type {
+                margin: 5px 20px;
+            }
+        }
+
+         .control-btns {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+
+             .control-btn {
+                font-size: @font-size;
+                font-weight: bold;
+                border: 1px solid;
+                border-radius: 100%;
+                width: @control-button-size;
+                height: @control-button-size;
+                cursor: pointer;
+            }
+
+             .amount {
+                margin: 0 5px;
+            }
+
+             .decrease-btn {
+                color: @element-text-color;
+                border-color: #C13129;
+                background: linear-gradient(to bottom, #DB524B, #BD2B22);
+                &:hover {
+                    background: linear-gradient(to bottom, #db3e36, #bb180f);
+                }
+            }
+
+             
+            .increase-btn {
+                color: @element-text-color;
+                border-color: #429841;
+                background: linear-gradient(to bottom, #56B855, #3E983C);
+                &:hover {
+                    background: linear-gradient(to bottom, #41b43f, #288326);
+                }    
+            }
+
+             
+            .delete-btn {
+                color: #EE8900;
+                border-color: #D5D5D5;
+                background: linear-gradient(to bottom, #FDFDFD, #E1E1E1);
+                &:hover {
+                    background: linear-gradient(to bottom, #f7f7f7, #d2d2d2);
+                }    
+            }
+        }
+    }
+
+     & > img {
+        position: absolute;
+        width: @order-image-size;
+        height: @order-image-size;
+        right: calc(-@order-image-size/2);
+    }
+}
