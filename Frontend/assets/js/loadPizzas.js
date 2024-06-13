@@ -19,6 +19,7 @@ async function fetchData() {
 function createPizzaCard(pizzaInfo) {
     const card = cloneTemplate(document, "pizza-card-template");
     loadID(card, pizzaInfo);
+    loadCategories(card, pizzaInfo);
     loadTag(card, pizzaInfo);
     loadImage(card, pizzaInfo);
     loadName(card, pizzaInfo);
@@ -30,6 +31,10 @@ function createPizzaCard(pizzaInfo) {
 
 function loadID(card, pizzaInfo) {
     card.querySelector(".pizza-card").id = pizzaInfo["id"];
+}
+
+function loadCategories(card, pizzaInfo) {
+    card.querySelector(".pizza-card").setAttribute("data-categories", pizzaInfo["categories"]);
 }
 
 function loadTag(pizzaCard, pizzaInfo) {
