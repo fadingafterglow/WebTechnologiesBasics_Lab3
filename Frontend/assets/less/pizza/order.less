@@ -31,7 +31,7 @@
         }
 
          .name {
-            color: @color;
+            color: @main-color;
             font-size: calc(1.45*@font-size);
             margin: 0;
         }
@@ -53,7 +53,7 @@
             align-items: center;
             font-weight: bold;
 
-             .control-btn {
+            .control-btn {
                 font-size: @font-size;
                 font-weight: bold;
                 border: 1px solid;
@@ -73,7 +73,7 @@
                 }
             }
 
-             .amount {
+            .amount {
                 margin: 0 5px;
 
                 @media (max-width: 750px) {
@@ -81,7 +81,7 @@
                 }
             }
 
-             .decrease-btn {
+            .decrease-btn {
                 color: @element-text-color;
                 border-color: #C13129;
                 background: linear-gradient(to bottom, #DB524B, #BD2B22);
@@ -102,7 +102,7 @@
 
              
             .delete-btn {
-                color: #EE8900;
+                color: @main-color;
                 border-color: #D5D5D5;
                 background: linear-gradient(to bottom, #FDFDFD, #E1E1E1);
                 &:hover {
