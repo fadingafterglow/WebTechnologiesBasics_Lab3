@@ -7,6 +7,7 @@ async function load() {
         fragment.appendChild(createPizzaCard(pizza))
     const container = document.getElementById("pizza-container");
     container.appendChild(fragment);
+    document.getElementById("pizzas-quantity").innerText = pizzas.length;
 }
 
 async function fetchData() {
@@ -42,7 +43,7 @@ function loadTag(pizzaCard, pizzaInfo) {
         tag.classList.add("popular");
     }
     else
-        tag.classList.add("none");
+        tag.classList.add("hidden");
 }
 
 function loadImage(pizzaCard, pizzaInfo) {
