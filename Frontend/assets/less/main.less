@@ -1,0 +1,103 @@
+@import "global-var.less";
+@import "pizza/overlay.less";
+@import "pizza/main-panel.less";
+@import "pizza/pizza-card.less";
+@import "pizza/side-panel.less";
+@import "pizza/order.less";
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    font-family: @font;
+    font-size: @font-size;
+
+    > footer {
+        position: fixed;
+        left: 7px;
+        bottom: 0;
+
+        div {
+            box-sizing: border-box;
+            width: 100px;
+            padding: 0 10px;
+            background-color: @badge-background;
+            border: @badge-border;
+            border-top: none;
+            text-align: center;
+
+            
+            @media (max-width: 500px){
+                width: 50px;
+                padding: 0;
+                font-size: calc(0.9 * @font-size);
+            }
+
+            p {
+                margin: 0;
+                font-weight: bold;
+                color: @element-text-color;
+
+                &:first-of-type {
+                    padding: 10px 0 5px 0;
+                    border-bottom: 2px dotted #D26300;
+                }
+
+                &:last-of-type {
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: -11px + 1px;
+
+            @media (max-width: 500px){
+                top: -5.5px + 1px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+main {
+    flex: 5;
+}
+
+aside {
+    flex: 1;
+}
+
+.action-button {
+    background: linear-gradient(150deg, #F1AC3F, #EC9500);
+    color: @element-text-color;
+    font-size: calc(1.1*@font-size);
+    border: 1px solid #E68F00;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(150deg, #f0a731, #d98a01);
+    }
+}
+
+.quantity {
+    color: @element-text-color;
+    background-color: #EE8900;
+    border-radius: 15px;
+    padding: 0 8px;
+    text-align: center;
+}
+
+.invisible-scroll {
+    overflow-y: auto;
+
+    // hide scrollbar
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    //hide in Firefox and Edge
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
