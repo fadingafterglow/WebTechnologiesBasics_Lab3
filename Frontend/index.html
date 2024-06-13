@@ -35,7 +35,7 @@
                 <header>
                     <div class="headline">
                         <h1>Усі піци</h1>
-                        <span class="quantity" id="pizzas-quantity"></span>
+                        <span class="quantity" id="pizzas-quantity">0</span>
                     </div>
                     <div class="filters">
                         <input type="radio" name="category" id="all" checked>
@@ -98,91 +98,43 @@
             <header>
                 <div>
                     <span>Замовлення</span>
-                    <span class="quantity">3</span>
+                    <span class="quantity" id="orders-quantity">0</span>
                 </div>
-                <button class="clear-btn">Очистити замовлення</button>
+                <button class="clear-btn" id="clear-orders-button">Очистити замовлення</button>
             </header>
-            <section class="order-container invisible-scroll">
-                <article class="order">
-                    <div>
-                        <p class="name">BBQ (Мала)</p>
-                        <div class="measures">
-                            <div>
-                                <img src="assets/images/size-icon.svg" />
-                                <span>30</span>
+            <section class="order-container invisible-scroll" id="order-container">
+                <template id="order-template">
+                    <article class="order">
+                        <div>
+                            <p class="name"></p>
+                            <div class="measures">
+                                <div>
+                                    <img src="assets/images/size-icon.svg" />
+                                    <span class="diameter"></span>
+                                </div>
+                                <div>
+                                    <img src="assets/images/weight.svg" />
+                                    <span class="weight"></span>
+                                </div>
                             </div>
-                            <div>
-                                <img src="assets/images/weight.svg" />
-                                <span>460</span>
-                            </div>
-                        </div>
-                        <div class="control-btns">
-                            <span><span>556</span> грн</span>
-                            <div>
-                                <button class="control-btn decrease-btn">–</button>
-                                <span class="amount">4</span>
-                                <button class="control-btn increase-btn">+</button>
-                            </div>
-                            <button class="control-btn delete-btn">×</button>
-                        </div>
-                    </div>
-                    <img src="assets/images/pizza_2.jpg" />
-                </article>
-                <article class="order">
-                    <div>
-                        <p class="name">Россо Густо (Мала)</p>
-                        <div class="measures">
-                            <div>
-                                <img src="assets/images/size-icon.svg" />
-                                <span>30</span>
-                            </div>
-                            <div>
-                                <img src="assets/images/weight.svg" />
-                                <span>400</span>
+                            <div class="control-btns">
+                                <span><span class="price"></span> грн</span>
+                                <div>
+                                    <button class="control-btn decrease-btn">–</button>
+                                    <span class="amount"></span>
+                                    <button class="control-btn increase-btn">+</button>
+                                </div>
+                                <button class="control-btn delete-btn">×</button>
                             </div>
                         </div>
-                        <div class="control-btns">
-                            <span><span>189</span> грн</span>
-                            <div>
-                                <button class="control-btn decrease-btn">–</button>
-                                <span class="amount">1</span>
-                                <button class="control-btn increase-btn">+</button>
-                            </div>
-                            <button class="control-btn delete-btn">×</button>
-                        </div>
-                    </div>
-                    <img src="assets/images/pizza_4.jpg" />
-                </article>
-                <article class="order">
-                    <div>
-                        <p class="name">Міксовий поло (Велика)</p>
-                        <div class="measures">
-                            <div>
-                                <img src="assets/images/size-icon.svg" />
-                                <span>40</span>
-                            </div>
-                            <div>
-                                <img src="assets/images/weight.svg" />
-                                <span>780</span>
-                            </div>
-                        </div>
-                        <div class="control-btns">
-                            <span><span>179</span> грн</span>
-                            <div>
-                                <button class="control-btn decrease-btn">–</button>
-                                <span class="amount">1</span>
-                                <button class="control-btn increase-btn">+</button>
-                            </div>
-                            <button class="control-btn delete-btn">×</button>
-                        </div>
-                    </div>
-                    <img src="assets/images/pizza_1.jpg" />
-                </article>
+                        <img src="" />
+                    </article>
+                </template>
             </section>
             <footer>
                 <div>
                     <span>Сума замовлення</span>
-                    <span><span>924</span> грн</span>
+                    <span><span id="total-price">0</span> грн</span>
                 </div>
                 <div>
                     <button class="action-button">Замовити</button>
@@ -196,6 +148,8 @@
                 <p>-20%</p>
             </div>
         </footer>
+        <script type="text/javascript" src="assets/js/utils.js"></script>
+        <script type="text/javascript" src="assets/js/orderList.js"></script>
         <script type="text/javascript" src="assets/js/loadPizzas.js"></script>
         <script type="text/javascript" src="assets/js/pizzaFilters.js"></script>
     </body>
