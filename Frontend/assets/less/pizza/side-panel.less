@@ -103,7 +103,12 @@ aside {
                     }
 
                     &:last-of-type {
+                        text-align: right;
                         font-size: calc(1.3*@font-size);
+
+                        @media (400px <= width <= 500px){
+                            font-size: calc(1.15*@font-size);
+                        }
                     }
                 }
             }

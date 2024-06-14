@@ -1,12 +1,13 @@
-window.addEventListener("load", load)
+window.addEventListener("load", loadPizzas)
 
-async function load() {
+async function loadPizzas() {
     const pizzas = await fetchData();
     const fragment = document.createDocumentFragment();
     for (const pizza of pizzas)
         fragment.appendChild(createPizzaCard(pizza))
     const container = document.getElementById("pizza-container");
     container.appendChild(fragment);
+    document.getElementById("pizzas-quantity").innerText = pizzas.length;
 }
 
 async function fetchData() {
@@ -17,21 +18,26 @@ async function fetchData() {
 
 function createPizzaCard(pizzaInfo) {
     const card = cloneTemplate(document, "pizza-card-template");
-    loadID(card, pizzaInfo);
-    loadTag(card, pizzaInfo);
-    loadImage(card, pizzaInfo);
-    loadName(card, pizzaInfo);
-    loadCategory(card, pizzaInfo);
-    loadIngridients(card, pizzaInfo);
-    loadSizes(card, pizzaInfo);
+    loadPizzaID(card, pizzaInfo);
+    loadPizzaCategories(card, pizzaInfo);
+    loadPizzaTag(card, pizzaInfo);
+    loadPizzaImage(card, pizzaInfo);
+    loadPizzaName(card, pizzaInfo);
+    loadPizzaCategory(card, pizzaInfo);
+    loadPizzaIngridients(card, pizzaInfo);
+    loadPizzaSizes(card, pizzaInfo);
     return card;
 }
 
-function loadID(card, pizzaInfo) {
+function loadPizzaID(card, pizzaInfo) {
     card.querySelector(".pizza-card").id = pizzaInfo["id"];
 }
 
-function loadTag(pizzaCard, pizzaInfo) {
+function loadPizzaCategories(card, pizzaInfo) {
+    card.querySelector(".pizza-card").setAttribute("data-categories", pizzaInfo["categories"]);
+}
+
+function loadPizzaTag(pizzaCard, pizzaInfo) {
     const tag = pizzaCard.querySelector(".tag");
     if (pizzaInfo["is_new"]) {
         tag.innerText = "Нова";
@@ -42,23 +48,23 @@ function loadTag(pizzaCard, pizzaInfo) {
         tag.classList.add("popular");
     }
     else
-        tag.classList.add("none");
+        tag.classList.add("hidden");
 }
 
-function loadImage(pizzaCard, pizzaInfo) {
+function loadPizzaImage(pizzaCard, pizzaInfo) {
     const img = pizzaCard.querySelector("img");
     img.src = pizzaInfo["icon"];
 }
 
-function loadName(pizzaCard, pizzaInfo) {
+function loadPizzaName(pizzaCard, pizzaInfo) {
     loadText(pizzaCard, ".name", pizzaInfo["title"]);
 }
 
-function loadCategory(pizzaCard, pizzaInfo) {
+function loadPizzaCategory(pizzaCard, pizzaInfo) {
     loadText(pizzaCard, ".category", pizzaInfo["type"]);
 }
 
-function loadIngridients(pizzaCard, pizzaInfo) {
+function loadPizzaIngridients(pizzaCard, pizzaInfo) {
     loadText(pizzaCard, ".ingridients", getAllIngridients());
 
     function getAllIngridients() {
@@ -73,12 +79,12 @@ function loadIngridients(pizzaCard, pizzaInfo) {
     }
 }
 
-function loadSizes(pizzaCard, pizzaInfo) {
+function loadPizzaSizes(pizzaCard, pizzaInfo) {
     const sizes = pizzaCard.querySelector(".properties");
-    loadSize("small_size");
-    loadSize("big_size");
+    loadPizzaSize("small_size");
+    loadPizzaSize("big_size");
 
-    function loadSize(sizeName) {
+    function loadPizzaSize(sizeName) {
         const sizeInfo = pizzaInfo[sizeName];
         if (typeof sizeInfo === "undefined")
             return;
@@ -86,15 +92,7 @@ function loadSizes(pizzaCard, pizzaInfo) {
         loadText(size, ".diameter", sizeInfo["size"]);
         loadText(size, ".weight", sizeInfo["weight"]);
         loadText(size, ".price > p:first-of-type", sizeInfo["price"]);
+        size.querySelector(".action-button").addEventListener("click", () => addPizzaOrder(pizzaInfo, sizeName));
         sizes.appendChild(size);
     }
-}
-
-function cloneTemplate(context, templateID) {
-    return context.getElementById(templateID).content.cloneNode(true);
-}
-
-function loadText(context, selector, value) {
-    const element = context.querySelector(selector);
-    element.innerText = value;
 }
