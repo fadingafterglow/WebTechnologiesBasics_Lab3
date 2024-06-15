@@ -1,16 +1,14 @@
-@import "global-var.less";
-@import "pizza/overlay.less";
-@import "pizza/main-panel.less";
-@import "pizza/pizza-card.less";
-@import "pizza/side-panel.less";
-@import "pizza/order.less";
+@import "../global-var.less";
+@import "../global-styles.less";
+@import "overlay.less";
+@import "main-panel.less";
+@import "pizza-card.less";
+@import "side-panel.less";
+@import "order.less";
 
 body {
-    margin: 0;
     display: flex;
     justify-content: flex-start;
-    font-family: @font;
-    font-size: @font-size;
 
     > footer {
         position: fixed;
@@ -67,41 +65,4 @@ main {
 
 aside {
     flex: 1;
-}
-
-.action-button {
-    background: linear-gradient(150deg, #F1AC3F, #EC9500);
-    color: @element-text-color;
-    font-size: calc(1.1*@font-size);
-    border: 1px solid #E68F00;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-        background: linear-gradient(150deg, #f0a731, #d98a01);
-    }
-}
-
-.quantity {
-    color: @element-text-color;
-    background-color: #EE8900;
-    border-radius: 15px;
-    padding: 0 0.35em;
-    text-align: center;
-}
-
-.invisible-scroll {
-    overflow-y: auto;
-
-    // hide scrollbar
-    &::-webkit-scrollbar{
-        display: none;
-    }
-    //hide in Firefox and Edge
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.hidden {
-    display: none;
 }

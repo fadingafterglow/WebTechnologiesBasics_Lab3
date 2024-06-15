@@ -42,6 +42,7 @@ function OrderInfo(pizzaInfo, size) {
     this.weight = sizeInfo["weight"];
     this.price = sizeInfo["price"];
     this.amount = 1;
+    this.type = pizzaInfo["type"];
     this.index = orderIndex++;
 }
 

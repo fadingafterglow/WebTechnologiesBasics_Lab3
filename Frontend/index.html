@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Pizza KMA</title>
-        <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
+        <link rel="stylesheet/less" type="text/css" href="assets/less/pizza/main.less" />
         <script src="https://cdn.jsdelivr.net/npm/less"></script>
     </head>
     <body>
-        <main class="invisible-scroll">
-            <nav>
+        <main class="main-panel invisible-scroll">
+            <section class="overlay">
                 <div class="badge">
                     <div>
                         <p>PIZZA</p>
@@ -30,7 +30,7 @@
                         <span>Піца</span>
                     </div>
                 </div>
-            </nav>
+            </section>
             <section class="main-container">
                 <header>
                     <div class="headline">
@@ -139,7 +139,7 @@
                     <span><span id="total-price">0</span> грн</span>
                 </div>
                 <div>
-                    <button class="action-button">Замовити</button>
+                    <a href="order.html" class="action-button">Замовити</a>
                 </div>
             </footer>
         </aside>
@@ -151,8 +151,8 @@
             </div>
         </footer>
         <script type="text/javascript" src="assets/js/utils.js"></script>
-        <script type="text/javascript" src="assets/js/ordersManagement.js"></script>
-        <script type="text/javascript" src="assets/js/loadPizzas.js"></script>
-        <script type="text/javascript" src="assets/js/pizzaFilters.js"></script>
+        <script type="text/javascript" src="assets/js/pizza/ordersManagement.js"></script>
+        <script type="text/javascript" src="assets/js/pizza/loadPizzas.js"></script>
+        <script type="text/javascript" src="assets/js/pizza/pizzaFilters.js"></script>
     </body>
 </html>
