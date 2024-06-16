@@ -66,3 +66,21 @@ main {
 aside {
     flex: 1;
 }
+
+#redirection-prevention {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+        text-align: center;
+        font-size: calc(2 * @font-size);
+        color: @main-color;
+        padding: 1.5em;
+        background-color: rgba(20, 20, 20, 0.85);
+    }
+}

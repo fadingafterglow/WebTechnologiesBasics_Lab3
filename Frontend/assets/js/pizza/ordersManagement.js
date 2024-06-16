@@ -1,6 +1,7 @@
 var orderIndex;
 window.addEventListener("load", loadOrdersFromStorage)
 document.getElementById("clear-orders-button").addEventListener("click", clearOrders);
+document.getElementById("order-redirection").addEventListener("click", onOrderAtempt);
 
 function loadOrdersFromStorage() {
     const orders = Object.values(localStorage).map(v => JSON.parse(v)).sort((a, b) => a.index - b.index);
@@ -130,4 +131,13 @@ function calculateTotalPrice() {
     for (const order of orders)
         totalPrice += order.amount * order.price;
     document.getElementById("total-price").innerText = totalPrice;
+}
+
+function onOrderAtempt(event) {
+    if (Object.values(localStorage).length < 1) {
+        event.preventDefault();
+        const redirectionPrevention = document.getElementById("redirection-prevention");
+        redirectionPrevention.classList.remove("hidden");
+        redirectionPrevention.addEventListener("click", () => redirectionPrevention.classList.add("hidden"));
+    }
 }

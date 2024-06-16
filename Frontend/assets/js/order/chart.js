@@ -16,7 +16,7 @@ function drawChart(values) {
     var data = google.visualization.arrayToDataTable(values.data);
 
     var options = {
-        title: "Розподіл піц за категорією",
+        title: "Розподіл піц",
         height: calculateHeight(),
         legend: {
             position: 'top'

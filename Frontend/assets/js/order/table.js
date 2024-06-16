@@ -110,9 +110,11 @@ function customizeToolbar(toolbar) {
         delete tabs[0];
         delete tabs[1];
         delete tabs[2];
+        delete tabs[3].menu[3];
         delete tabs[4].menu[0];
         delete tabs[6];
         delete tabs[7];
+        delete tabs[5];
         return tabs;
     }
 }
