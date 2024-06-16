@@ -94,6 +94,10 @@ function createTable() {
                         title: "Звіт по обраним піцам"
                     }
                 }
+        },
+        reportcomplete: () => {
+            pivot.off("reportcomplete");
+            createGoogleChart();
         }
     });
     document.getElementById("wdr-pivot-view").style.zIndex = 0;
@@ -108,6 +112,7 @@ function customizeToolbar(toolbar) {
         delete tabs[2];
         delete tabs[4].menu[0];
         delete tabs[6];
+        delete tabs[7];
         return tabs;
     }
 }
