@@ -11,7 +11,7 @@ async function loadPizzas() {
 }
 
 async function fetchData() {
-    const response = await fetch("assets/js/pizzaList.json");
+    const response = await fetch("assets/js/data/pizzaList.json");
     const json = await response.json();
     return json;
 }
